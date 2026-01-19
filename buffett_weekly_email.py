@@ -1,4 +1,5 @@
 pip install yfinance pandas schedule
+import os
 import yfinance as yf
 import pandas as pd
 import smtplib
@@ -17,9 +18,9 @@ STOCK_UNIVERSE = [
     "BRK-B", "COST", "ADBE", "TXN", "UNH", "CVX", "XOM"
 ]
 
-EMAIL_ADDRESS = "your_email@gmail.com"
-EMAIL_PASSWORD = "your_app_password"
-RECIPIENT_EMAIL = "recipient_email@gmail.com"
+EMAIL_ADDRESS = os.environ["EMAIL_ADDRESS"]
+EMAIL_PASSWORD = os.environ["EMAIL_PASSWORD"]
+RECIPIENT_EMAIL = os.environ["RECIPIENT_EMAIL"]
 
 # ----------------------------
 # BUFFETT SCREEN
