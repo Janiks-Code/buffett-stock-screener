@@ -1,9 +1,7 @@
-
 import os
 import yfinance as yf
 import pandas as pd
 import smtplib
-import schedule
 import time
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -106,11 +104,4 @@ def weekly_job():
     df = run_buffett_screen()
     send_email(df)
 
-# Run every Monday at 9 AM
-schedule.every().monday.at("09:00").do(weekly_job)
-
-print("📬 Buffett stock screener running...")
-
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+weekly_job()
