@@ -78,8 +78,10 @@ def run_buffett_screen():
 # EMAIL FUNCTION
 # ----------------------------
 
-def send_email(df):
-    subject = f"📈 Buffett-Style Stock Picks – {date.today()}"
+from datetime import date
+
+def send_email(df, strategy_name):
+    subject = f"Weekly Stock Screener – {strategy_name} – {date.today()}"
     body = "No stocks met the criteria this week."
 
     if not df.empty:
