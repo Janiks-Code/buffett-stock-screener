@@ -98,12 +98,3 @@ def send_email(df, strategy_name):
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.send_message(msg)
 
-# ----------------------------
-# WEEKLY JOB
-# ----------------------------
-
-def weekly_job():
-    df = run_buffett_screen()
-    send_email(df)
-
-weekly_job()
